@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server for [Penrose](https://penrose.cs.cmu.edu/) - Create beautiful mathematical diagrams through natural language.
 
+<a href="https://glama.ai/mcp/servers/bc2re1p5ho"><img width="380" height="200" src="https://glama.ai/mcp/servers/bc2re1p5ho/badge" alt="Penrose Server MCP server" /></a>
+
 ## Overview
 
 This MCP server provides tools and resources for creating mathematical diagrams using Penrose's domain-specific languages:
