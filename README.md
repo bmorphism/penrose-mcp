@@ -1,70 +1,37 @@
-# penrose-mcp MCP Server
+# Penrose MCP Server
 
-An MCP server for Penrose
+A Model Context Protocol (MCP) server for [Penrose](https://penrose.cs.cmu.edu/) - Create beautiful mathematical diagrams through natural language.
 
-This is a TypeScript-based MCP server that implements a simple notes system. It demonstrates core MCP concepts by providing:
+## Overview
 
-- Resources representing text notes with URIs and metadata
-- Tools for creating new notes
-- Prompts for generating summaries of notes
+This MCP server provides tools and resources for creating mathematical diagrams using Penrose's domain-specific languages:
 
-## Features
+- **Domain (DSL)**: Define mathematical types and relationships
+- **Substance**: Describe mathematical objects and their relationships
+- **Style**: Specify visual representation rules
 
-### Resources
-- List and access notes via `note://` URIs
-- Each note has a title, content and metadata
-- Plain text mime type for simple content access
+## Project Structure
 
-### Tools
-- `create_note` - Create new text notes
-  - Takes title and content as required parameters
-  - Stores note in server state
-
-### Prompts
-- `summarize_notes` - Generate a summary of all stored notes
-  - Includes all note contents as embedded resources
-  - Returns structured prompt for LLM summarization
+- `.topos/`: Research materials and documentation (gitignored)
+  - `penrose-research/`: Design documents and specifications
+  - `mcp-examples/`: Reference MCP server implementations
+  - `mcp-spec/`: Official MCP protocol documentation
 
 ## Development
 
-Install dependencies:
-```bash
-npm install
-```
-
-Build the server:
-```bash
-npm run build
-```
-
-For development with auto-rebuild:
-```bash
-npm run watch
-```
-
-## Installation
-
-To use with Claude Desktop, add the server config:
-
-On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "penrose-mcp": {
-      "command": "/path/to/penrose-mcp/build/index.js"
-    }
-  }
-}
-```
-
-### Debugging
-
-Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
+Use the justfile to access documentation and reference materials:
 
 ```bash
-npm run inspector
+# List all available commands
+just --list
+
+# View the server architecture
+just architecture
+
+# Access MCP specifications
+just mcp-spec
 ```
 
-The Inspector will provide a URL to access debugging tools in your browser.
+## License
+
+MIT License - See LICENSE file for details
